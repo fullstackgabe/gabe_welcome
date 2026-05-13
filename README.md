@@ -2,4 +2,4 @@
 currículo web
 
 link:
-https://gabriel447.github.io/gabe_welcome/
+https://fullstackgabe.github.io/gabewelcome/
