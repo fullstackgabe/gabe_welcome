@@ -32,12 +32,12 @@ h4 {
 
 .main {
     background: #5000ca;
-    padding-top: 60px;
+    padding-top: 180px;
     padding-bottom: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: left;
+    text-align: center;
 }
 
 .desc-p {
@@ -79,9 +79,11 @@ path {
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    padding: 0;
+    padding: 60px 0;
     margin: 0;
     align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .sobremim>p {
@@ -96,6 +98,56 @@ path {
     width: 200px;
     height: 200px;
     border-radius: 50%;
+}
+
+.sobremim-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 560px;
+    padding: 0 20px;
+}
+
+.sobremim-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px 24px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sobremim-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.sobremim-card-icon {
+    font-size: 2.6rem;
+    line-height: 1;
+}
+
+.sobremim-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sobremim-card-text strong {
+    color: #5000ca;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.sobremim-card-text span {
+    color: #666;
+    font-size: 1.4rem;
+    line-height: 1.5;
 }
 
 #social-icon {
@@ -262,6 +314,13 @@ path {
     width: 150px;
     height: 100px;
     gap: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.slide:hover {
+    transform: translateY(-8px) scale(1.1);
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.15));
 }
 
 .slider {
@@ -288,6 +347,10 @@ path {
     .desc-p {
         padding-top: 40px;
         font-size: 1rem;
+    }
+
+    .main {
+        padding-top: 120px;
     }
 
     .sobremim {
