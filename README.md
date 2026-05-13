@@ -2,4 +2,4 @@
 currículo web
 
 link:
-https://fullstackgabe.github.io/gabewelcome/
+https://fullstackgabe.github.io/welcome/
