@@ -119,12 +119,15 @@ path {
     padding: 20px 24px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     border: 1px solid #eee;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sobremim-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+.sobremim-image {
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.sobremim-image:hover {
+    transform: translateY(-6px) scale(1.03);
 }
 
 .sobremim-card-icon {
@@ -216,13 +219,7 @@ path {
     align-items: center;
     text-align: center;
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #eee;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
 .project-icon {
@@ -286,12 +283,6 @@ path {
     height: 30px;
     object-fit: contain;
     opacity: 0.9;
-    transition: transform 0.3s ease;
-}
-
-.project-techs img:hover {
-    transform: scale(1.2);
-    opacity: 1;
 }
 
 @media (max-width: 600px) {
@@ -320,7 +311,6 @@ path {
 
 .slide:hover {
     transform: translateY(-8px) scale(1.1);
-    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.15));
 }
 
 .slider {
