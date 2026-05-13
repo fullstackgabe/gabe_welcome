@@ -1,5 +1,4 @@
-# gabewelcome
-currículo web
+# welcome
 
 link:
 https://fullstackgabe.github.io/welcome/
