@@ -79,11 +79,14 @@ path {
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    padding: 60px 0;
-    margin: 0;
+    padding: 0 0 100px;
+    margin: -80px 0 0 0;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+}
+
+.sobremim h4 {
+    margin-bottom: 30px;
 }
 
 .sobremim>p {
@@ -112,13 +115,24 @@ path {
 
 .sobremim-card {
     display: flex;
-    align-items: center;
-    gap: 18px;
+    flex-direction: column;
     background: white;
     border-radius: 15px;
-    padding: 20px 24px;
+    padding: 8px 24px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     border: 1px solid #eee;
+}
+
+.sobremim-card-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.sobremim-card-row:last-child {
+    border-bottom: none;
 }
 
 .sobremim-image {
@@ -200,17 +214,30 @@ path {
     margin-bottom: 100px;
 }
 
-/* Projetos Grid */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
+/* Projetos Carousel */
+.projects-carousel {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+.projects-viewport {
+    flex: 1;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.projects-grid {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.4s ease;
+}
+
 .project-card {
+    flex: 0 0 calc((100% - 60px) / 3);
     background: white;
     border-radius: 15px;
     padding: 30px;
@@ -220,6 +247,36 @@ path {
     text-align: center;
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     border: 1px solid #eee;
+}
+
+.carousel-btn {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #5000ca;
+    color: #5000ca;
+    cursor: pointer;
+    font-size: 2.6rem;
+    line-height: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(80, 0, 202, 0.15);
+}
+
+.carousel-btn:hover:not(:disabled) {
+    background: #5000ca;
+    color: white;
+    transform: scale(1.1);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
 }
 
 .project-icon {
@@ -286,9 +343,24 @@ path {
 }
 
 @media (max-width: 600px) {
+    .projects-carousel {
+        display: block;
+        padding: 0 20px;
+    }
+    .carousel-btn {
+        display: none;
+    }
+    .projects-viewport {
+        overflow: visible;
+    }
     .projects-grid {
-        grid-template-columns: 1fr;
-        padding: 0 40px;
+        flex-direction: column;
+        transform: none !important;
+        gap: 24px;
+    }
+    .project-card {
+        flex: 0 0 auto;
+        width: 100%;
     }
 }
 
@@ -297,14 +369,16 @@ path {
 .slide-tech {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: row;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .slide {
-    width: 150px;
-    height: 100px;
-    gap: 20px;
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
     cursor: pointer;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -315,6 +389,10 @@ path {
 
 .slider {
     margin-bottom: 40px;
+}
+
+.slider h4 {
+    margin-bottom: 30px;
 }
 
 @media (max-width: 600px) {
@@ -346,7 +424,13 @@ path {
     .sobremim {
         display: flex;
         flex-direction: column;
-        padding-top: 80px;
+        padding-top: 40px;
+        margin-top: 0;
+    }
+
+    .sobremim-info {
+        max-width: 88%;
+        padding: 0;
     }
 
     .sobremim>p {
@@ -379,14 +463,13 @@ path {
     }
 
     .slide-tech {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 18px;
     }
 
     .slide {
-        width: 80px;
-        height: auto;
+        width: 64px;
+        height: 64px;
     }
 }
